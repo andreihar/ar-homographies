@@ -1,0 +1,130 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration file="C:\Users\PC\Desktop\Projects\Vision\ar-homographies\App\ARHomographies.prj" location="C:\Users\PC\Desktop\Projects\Vision\ar-homographies\App" name="ARHomographies" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>ARHomographies</param.appname>
+    <param.icon />
+    <param.icons />
+    <param.version>1.0</param.version>
+    <param.authnamewatermark>Andrei Harbachov</param.authnamewatermark>
+    <param.email>andrei.harbachov@mail.com</param.email>
+    <param.company>Andrei Harbachov</param.company>
+    <param.summary>The AR Homographies app uses planar homographies to detect and match features between images, overlaying an image onto another in real-time.</param.summary>
+    <param.description>This MATLAB application implements an Augmented Reality experience by using planar homographies to overlay an image onto a specific region of another image. The core functionality involves detecting feature points in the input images, matching these points, and computing the homography matrix that describes the transformation between the images.
+
+The application uses the FAST feature detector to find salient points in the input images and employs the BRIEF descriptor to extract features around these points. It matches the descriptors between images using a threshold to ensure robust correspondences. For homography computation, the Direct Linear Transform (DLT) method is used to estimate the homography matrix from the matched feature points, enhancing numerical stability by normalising the point coordinates before computing the homography.
+
+The RANSAC algorithm is integrated to robustly estimate the homography matrix by iteratively selecting random subsets of matched points and identifying the inliers that support the best homography. The computed homography is then used to warp the image onto the target region.
+
+The application provides an intuitive interface for users to load the input images, compute the homography, and visualise the augmented result. It displays the matched feature points and the overlay in real-time, allowing users to observe the transformation process. This application serves as a practical example of how planar homographies can be applied to create compelling AR experiences, demonstrating the potential of AR technology in transforming everyday scenes with virtual content, using both images and videos.</param.description>
+    <param.screenshot />
+    <param.guid />
+    <param.installpath.string>\Andrei Harbachov\ARHomographies\</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\ARHomographies\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\ARHomographies\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\ARHomographies\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\ARHomographies</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>true</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <param.native.matlab>false</param.native.matlab>
+    <param.checkbox>false</param.checkbox>
+    <param.example />
+    <param.help.text>Syntax 
+	  -? 
+	 
+ Input Arguments 
+	 -?  print help on how to use the application 
+	 input arguments</param.help.text>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.version />
+      <param.screenshot />
+      <param.guid />
+      <param.installpath.string />
+      <param.installpath.combo />
+      <param.logo />
+      <param.install.notes />
+      <param.target.install.notes />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.logdir />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.windows.command.prompt />
+      <param.create.log />
+      <param.log.file />
+      <param.native.matlab />
+      <param.checkbox />
+      <param.example />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\ar_homographies.mlapp</file>
+    </fileset.main>
+    <fileset.resources />
+    <fileset.package />
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\compositeH.m</file>
+      <file>${PROJECT_ROOT}\computeH.m</file>
+      <file>${PROJECT_ROOT}\computeH_norm.m</file>
+      <file>${PROJECT_ROOT}\computeH_ransac.m</file>
+      <file>${PROJECT_ROOT}\matchPics.m</file>
+      <file>${PROJECT_ROOT}\processAR.m</file>
+      <file>${PROJECT_ROOT}\warpH.m</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}\ARHomographies\for_testing" name="ARHomographies.exe" optional="false">C:\Users\PC\Desktop\Projects\Vision\ar-homographies\App\ARHomographies\for_testing\ARHomographies.exe</file>
+      <file location="${PROJECT_ROOT}\ARHomographies\for_testing" name="readme.txt" optional="true">C:\Users\PC\Desktop\Projects\Vision\ar-homographies\App\ARHomographies\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\ARHomographies\for_testing" name="splash.png" optional="false">C:\Users\PC\Desktop\Projects\Vision\ar-homographies\App\ARHomographies\for_testing\splash.png</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2023a</root>
+      <toolboxes>
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
